@@ -25,8 +25,6 @@
   </div>
 </form>
 
-<script>
-
 /**
 * Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
 * You can use #id or any other CSS selector that will define the input field explicitly.
@@ -35,16 +33,27 @@
 */
 var config = {
     fields: {
-        "Contact": "#name", // Name of a contact, registering to the event
-        "Contact.Email": "#email" // Contact's email
+        "Name": "#name", // Name of a visitor, submitting the page
+        "Email": "#email", // Visitor's email
+        "Zip": "css-selector", // Visitor's ZIP code
+        "MobilePhone": "css-selector", // Visitor's phone number
+        "Company": "css-selector", // Name of a company (for business landing pages)
+        "Industry": "css-selector", // Company industry (for business landing pages)
+        "FullJobTitle": "css-selector", // Visitor's job title (for business landing pages)
+        "UseEmail": "css-selector", // Logical value: 'true' equals to visitor's opt-in to receive emails
+        "City": "css-selector", // City
+        "Country": "css-selector", // Country
+        "Commentary": "css-selector", // Notes
+        "OViSalesArea": "css-selector", // Verkaufsbereich
+        "OViMainSalesAreaLookup": "css-selector" // Verkaufsorganisation
     },
     contactFields: {
         "FullName": "css-selector", // Name of a contact
         "Phone": "css-selector", // Contact's mobile phone
-        "Email": "#email" // Contact's email
+        "Email": "css-selector" // Contact's email
     },
     customFields: {},
-    landingId: "f121d9fb-3407-4987-b9ae-579a5b241e4e",
+    landingId: "5147a45a-109c-479c-adb1-6280500a447a",
     serviceUrl: "https://josera.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
     redirectUrl: ""
 };
@@ -55,15 +64,14 @@ var config = {
 */
 function createObject() {
     landing.createObjectFromLanding(config);
-    console.log("onsubmit()")
 }
 /**
 * The function below inits landing page using URL parameters.
 */
 function initLanding() {
-    landing.initLanding(config)
+    landing.initLanding(config);
 }
-jQuery(document).ready(initLanding)
+jQuery(document).ready(initLanding);
 </script>
 
 
