@@ -24,6 +24,14 @@
     <input type="number" name="tel" id="tel"/>
   </div>
   <div class="form-example">
+    <label for="phone">Enter your phone number:: </label>
+    <input type="tel" name="tel" id="tel"/>
+  </div>
+  <div class="form-example">
+    <label for="checkbox">Agree to process data? </label>
+    <input type="checkbox" name="box" id="box"/>
+  </div>
+  <div class="form-example">
     <input type="submit" value="Subscribe!" />
   </div>
 </form>
@@ -39,7 +47,8 @@ var config = {
     fields: {
         "Name": "#name", // Name of a visitor, submitting the page
         "Email": "#email", // Visitor's email
-        "MobilePhone": "#tel"
+        "MobilePhone": "#tel",
+        "UseEmail": "#box"
     },
     contactFields: {
         "FullName": "#name", // Name of a contact
