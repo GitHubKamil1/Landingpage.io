@@ -46,6 +46,7 @@
     <label for="phone">phone: </label>
     <input type="tel" name="phone" id="phone" />
   </div>
+<input type="hidden" id="fieldId" />
  <div class="form-example">
     <select name="options" id="option-select">
       <option value="1">serwis kiszonarski</option>
@@ -62,8 +63,8 @@
 </form>
 
 <script>
-var option-select = $("#options:selected").text();
-$("#option-select").val(option-select);
+var fieldId = $("#options:selected").text();
+$("#fieldId").val(fieldId);
 /**
 * Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
 * You can use #id or any other CSS selector that will define the input field explicitly.
@@ -80,7 +81,7 @@ var config = {
         "Address": "#adress",
         "Zip": "#zip",
         "City": "#city",
-        "Commentary": "#option-select"
+        "Commentary": "#fieldId"
     },
     contactFields: {},
     customFields: {},
