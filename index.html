@@ -48,7 +48,7 @@
   </div>
 <input type="hidden" id="fieldId" />
  <div class="form-example">
-    <select name="options" id="option-select">
+    <select name="options" id="options">
       <option value="1" name="option1">serwis kiszonarski</option>
       <option value="2">option 2</option>
       <option value="3">option 3</option>
@@ -63,8 +63,6 @@
 </form>
 
 <script>
-var fieldId = $("#options:selected").text();
-$("#fieldId").val(fieldId);
 /**
 * Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
 * You can use #id or any other CSS selector that will define the input field explicitly.
@@ -95,8 +93,12 @@ var config = {
 * Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
 */
 function createLead() {
-    var fieldId = $("#option-select:selected").text();
-    $("#fieldId").val(fieldId);
+    //var fieldId = $("#options:selected").text();
+   // $("#fieldId").val(fieldId);
+    var skillsSelect = document.getElementById("options");
+    var selectedText = skillsSelect.options[skillsSelect.selectedIndex].text;
+    $("#fieldId").val(selectedText);
+  
     landing.createLeadFromLanding(config);
 }
 /**
