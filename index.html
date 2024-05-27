@@ -47,6 +47,7 @@
     <input type="tel" name="phone" id="phone" />
   </div>
 <input type="hidden" id="fieldId" />
+<input type="hidden" id="composedName" />
  <div class="form-example">
     <select name="options" id="options">
       <option value="1" name="option1">serwis kiszonarski</option>
@@ -72,7 +73,7 @@
   
 var config = {
     fields: {
-        "Contact": "#firstname", // Name of a visitor, submitting the page
+        "Contact": "#composedName", // Name of a visitor, submitting the page
         "Email": "#email", // Visitor's email
         "MobilePhone": "#phone",
         "UseEmail": "#box",
@@ -93,11 +94,15 @@ var config = {
 * Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
 */
 function createLead() {
-    //var fieldId = $("#options:selected").text();
-   // $("#fieldId").val(fieldId);
     var skillsSelect = document.getElementById("options");
     var selectedText = skillsSelect.options[skillsSelect.selectedIndex].text;
     $("#fieldId").val(selectedText);
+  
+    var inputfirstname = document.getElementById("firstname").value
+    var inputlastname = document.getElementById("lastname").value
+    var outputname = inputfirstname + " " + inputlastname;
+    $("#composedName").val(outputname);
+    
   
     landing.createLeadFromLanding(config);
 }
