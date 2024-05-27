@@ -49,7 +49,7 @@
 <input type="hidden" id="fieldId" />
  <div class="form-example">
     <select name="options" id="option-select">
-      <option value="1">serwis kiszonarski</option>
+      <option value="1" name="option1">serwis kiszonarski</option>
       <option value="2">option 2</option>
       <option value="3">option 3</option>
       <option value="4">option 4</option>
@@ -95,7 +95,7 @@ var config = {
 * Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
 */
 function createLead() {
-    var fieldId = $("#options:selected").text();
+    var fieldId = $("#option1:selected").text();
     $("#fieldId").val(fieldId);
     landing.createLeadFromLanding(config);
 }
