@@ -95,7 +95,7 @@ var config = {
 * Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
 */
 function createLead() {
-    var fieldId = $("#option1:selected").text();
+    var fieldId = $("#option-select:selected").text();
     $("#fieldId").val(fieldId);
     landing.createLeadFromLanding(config);
 }
