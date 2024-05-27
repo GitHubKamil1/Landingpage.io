@@ -54,7 +54,6 @@
       <option value="4">option 4</option>
   </select>
 </div>
-<input type="hidden" id="fieldId" />
   
   <div class="form-example">
     <input type="submit" value="Subscribe!" />
@@ -63,8 +62,8 @@
 </form>
 
 <script>
-var fieldId = $("#name_of_dropdown option:selected").text();
-$("#fieldId").val(fieldId);
+var option-select = $("#options:selected").text();
+$("#option-select").val(option-select);
 /**
 * Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
 * You can use #id or any other CSS selector that will define the input field explicitly.
@@ -81,7 +80,7 @@ var config = {
         "Address": "#adress",
         "Zip": "#zip",
         "City": "#city",
-        "Commentary": "#fieldId"
+        "Commentary": "#option-select"
     },
     contactFields: {},
     customFields: {},
