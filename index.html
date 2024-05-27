@@ -46,22 +46,25 @@
     <label for="phone">phone: </label>
     <input type="tel" name="phone" id="phone" />
   </div>
-  <div class="form-example">
-    <input type="submit" value="Subscribe!" />
-  </div>
-  <div class="form-example">
+ <div class="form-example">
     <select name="options" id="option-select">
-      <option value="">--select service--</option>
       <option value="1">serwis kiszonarski</option>
       <option value="2">option 2</option>
       <option value="3">option 3</option>
       <option value="4">option 4</option>
   </select>
 </div>
+<input type="hidden" id="fieldId" />
+  
+  <div class="form-example">
+    <input type="submit" value="Subscribe!" />
+  </div>
  
 </form>
 
 <script>
+var fieldId = $("#name_of_dropdown option:selected").text();
+$("#fieldId").val(fieldId);
 /**
 * Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
 * You can use #id or any other CSS selector that will define the input field explicitly.
@@ -77,7 +80,8 @@ var config = {
         "UseEmail": "#box",
         "Address": "#adress",
         "Zip": "#zip",
-        "City": "#city"
+        "City": "#city",
+        "Commentary": "#fieldId"
     },
     contactFields: {},
     customFields: {},
