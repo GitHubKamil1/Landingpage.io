@@ -23,6 +23,10 @@
     <input type="text" name="lastname" id="lastname" />
   </div>
   <div class="form-example">
+    <label for="adress">adress: </label>
+    <input type="text" name="adress" id="adress" />
+  </div>
+  <div class="form-example">
     <label for="zip">zip: </label>
     <input type="text" name="zip" id="zip" />
   </div>
@@ -39,8 +43,8 @@
     <input type="email" name="email" id="email" required />
   </div>
   <div class="form-example">
-    <label for="phone">number: </label>
-    <input type="tel" name="tel" id="tel" />
+    <label for="phone">phone: </label>
+    <input type="tel" name="phone" id="phone" />
   </div>
   <div class="form-example">
     <label for="checkbox">Agree to process data? </label>
@@ -60,16 +64,13 @@
 */
 var config = {
     fields: {
-        "Name": "#name", // Name of a visitor, submitting the page
+        "Contact": "#firstname" "lastname": "#lastname, // Name of a visitor, submitting the page
         "Email": "#email", // Visitor's email
-        "MobilePhone": "#tel",
+        "MobilePhone": "#phone",
         "UseEmail": "#box",
-        "OViUstIdNoStr": "#OViUstIdNoStr"
-    },
-    contactFields: {
-        "FullName": "#name", // Name of a contact
-        "Phone": "#tel", // Contact's mobile phone
-        "Email": "#email" // Contact's email
+        "Address": "#adress",
+        "Zip": "#zip",
+        "City": "#city"
     },
     customFields: {},
     landingId: "5147a45a-109c-479c-adb1-6280500a447a",
