@@ -12,7 +12,6 @@
 
 </head>
 <body>
-
 <form class="form-example" name="landingForm" id="my-form" onSubmit="createLead(); return false">
   <div class="form-example">
     <label for="firstname">firstname: </label>
@@ -64,6 +63,7 @@
 </form>
 
 <script>
+
 /**
 * Replace the "css-selector" placeholders in the code below with the element selectors on your landing page.
 * You can use #id or any other CSS selector that will define the input field explicitly.
@@ -107,7 +107,7 @@ function createLead() {
     var outputname = inputfirstname + " " + inputlastname;
     $("#composedName").val(outputname);
     
-  
+    console.log(${{secrets.API_KEY}})
     landing.createLeadFromLanding(config);
 }
 /**
