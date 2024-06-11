@@ -109,7 +109,7 @@ function createLead() {
 
     //Füge den ausgewählten Wert als neuen Schlüssel-Wert-Paar in die customFields von config ein
 
-    if(selectedText){
+    switch(selectedText){
       case "serwis kiszonarski":
         config.fields["OViSilageadditive"] = true;
         break;
