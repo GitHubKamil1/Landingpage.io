@@ -47,6 +47,7 @@
   </div>
 <input type="hidden" id="fieldId" />
 <input type="hidden" id="composedName" />
+<input type="hidden" id="booleanoption" />
  <div class="form-example">
     <select name="options" id="options">
       <option value="1" name="option1">serwis kiszonarski</option>
@@ -83,6 +84,7 @@ var config = {
         "Zip": "#zip",
         "City": "#city",
         "Commentary": "#fieldId"
+        "UsrField": "#booleanoption"
     },
     contactFields: {},
     customFields: {
@@ -97,6 +99,13 @@ var config = {
 * Bind this function call to the "onSubmit" event of the form or any other elements events.
 * Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
 */
+
+function renameField(oldKey, newKey) {
+    if (config.fields.hasOwnProperty(oldKey)) {
+        config.fields[newKey] = config.fields[oldKey];
+        delete config.fields[oldKey];
+    }
+}  
 function createLead() {
     var skillsSelect = document.getElementById("options");
     var selectedText = skillsSelect.options[skillsSelect.selectedIndex].text;
@@ -111,13 +120,16 @@ function createLead() {
 
     switch(selectedText){
       case "serwis kiszonarski":
-        config.fields["OViSilageadditive"] = true;
+        $("#UsrField").val(true);
+        renameField("UsrField", "OViSilageadditive")
         break;
       case "option1":
-        config.fields[selectedText] = selectedText;
+        $("#UsrField").val(true);
+        renameField("UsrField", "OViSpecialfeed")
         break;
       case "option2":
-        config.fields[selectedText] = selectedText;
+        $("#UsrField").val(true);
+        renameField("UsrField", "OViJosiCat")
         break;
     }
     //console.log(${{secrets.API_KEY}});
