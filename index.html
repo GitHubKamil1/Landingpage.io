@@ -106,7 +106,20 @@ function createLead() {
     var inputlastname = document.getElementById("lastname").value
     var outputname = inputfirstname + " " + inputlastname;
     $("#composedName").val(outputname);
-    
+
+    //Füge den ausgewählten Wert als neuen Schlüssel-Wert-Paar in die customFields von config ein
+
+    if(selectedText){
+      case "serwis kiszonarski":
+        config.fields["OViSilageadditive"] = true;
+        break;
+      case "option1":
+        config.fields[selectedText] = selectedText;
+        break;
+      case "option2":
+        config.fields[selectedText] = selectedText;
+        break;
+    }
     //console.log(${{secrets.API_KEY}});
     landing.createLeadFromLanding(config);
 }
