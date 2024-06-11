@@ -121,15 +121,14 @@ function createLead() {
     switch(selectedText){
       case "serwis kiszonarski":
         $("#booleanoption").val("true");
-        //document.getElementById('booleanoption').value = "true";
         renameField("UsrField", "OViSilageadditive")
         break;
       case "option1":
-        $("#UsrField").val("true");
+        $("#booleanoption").val("true");
         renameField("UsrField", "OViSpecialfeed")
         break;
       case "option2":
-        $("#UsrField").val("true");
+         $("#booleanoption").val("true");
         renameField("UsrField", "OViJosiCat")
         break;
     }
