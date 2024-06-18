@@ -108,6 +108,7 @@ function renameField(oldKey, newKey) {
 }  
 function createLead() {
     var skillsSelect = document.getElementById("options");
+    var selectedValue = skillsSelect.options[skillsSelect.selectedIndex].value;
     var selectedText = skillsSelect.options[skillsSelect.selectedIndex].text;
     $("#fieldId").val(selectedText);
   
@@ -116,21 +117,24 @@ function createLead() {
     var outputname = inputfirstname + " " + inputlastname;
     $("#composedName").val(outputname);
 
-    //Füge den ausgewählten Wert als neuen Schlüssel-Wert-Paar in die customFields von config ein
+    // Füge den ausgewählten Wert als neuen Schlüssel-Wert-Paar in die customFields von config ein
 
-    switch(selectedText){
-      case "serwis kiszonarski":
+    switch(selectedValue){
+      case "1":
         $("#booleanoption").val("true");
         renameField("UsrField", "OViSilageadditive")
         break;
-      case "option 1":
+      case "2":
         $("#booleanoption").val("true");
         renameField("UsrField", "OViSpecialfeed")
         break;
-      case "option 2":
-         $("#booleanoption").val("true");
+      case "3":
+        $("#booleanoption").val("true");
         renameField("UsrField", "OViJosiCat")
         break;
+      // Du kannst weitere Fälle für andere Werte hinzufügen
+      default:
+        $("#booleanoption").val("false");
     }
     //console.log(${{secrets.API_KEY}});
     landing.createLeadFromLanding(config);
@@ -144,9 +148,6 @@ function initLanding() {
 jQuery(document).ready(initLanding);
 </script>
 
-
-</body>
-</html>
 
 </body>
 </html>
