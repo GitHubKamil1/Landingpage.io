@@ -74,12 +74,10 @@
   
 var config = {
     fields: {
-        "test": "test",
         "Contact": "#composedName", // Name of a visitor, submitting the page
         "Account": "#composedName",
         "Email": "#email", // Visitor's email
         "MobilePhone": "#phone",
-        "UseEmail": "#box",
         "Address": "#adress",
         "Zip": "#zip",
         "City": "#city",
@@ -87,9 +85,7 @@ var config = {
         "UsrField": "#booleanoption"
     },
     contactFields: {},
-    customFields: {
-      "test":"test"
-    },
+    customFields: {},
     landingId: "5147a45a-109c-479c-adb1-6280500a447a",
     serviceUrl: "https://pre-josera.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
     redirectUrl: ""
@@ -136,7 +132,6 @@ function createLead() {
       default:
         $("#booleanoption").val("false");
     }
-    //console.log(${{secrets.API_KEY}});
     landing.createLeadFromLanding(config);
 }
 /**
