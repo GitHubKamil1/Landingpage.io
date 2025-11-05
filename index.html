@@ -96,7 +96,11 @@ var config = {
         "Testfield2": "#adress",
         "OViEventId": "7f7ecbf0-0fe2-46b3-8d21-09328c4e9202"
     },
-    //contactFields: {},
+    contactFields: {
+        "FullName": "#composedName", // Name of a contact
+        "Phone": "#phone", // Contact's mobile phone
+        "Email": "#email" // Contact's email
+    },
     //customFields: {},
     landingId: "5147a45a-109c-479c-adb1-6280500a447a",
     serviceUrl: "https://pre-josera.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
@@ -167,6 +171,7 @@ jQuery(document).ready(initLanding);
 
 </body>
 </html>
+
 
 
 
